@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Website Generator</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("{% static 'Images/restaurant1.jpg' %}");
+            background-size: cover; /* Placeholder background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dining Redefined</h1>
+        <p>Get started by selecting an option below.</p>
+    </header>
+    <main>
+        <section class="choice-section">
+            <h2>Select an Option</h2>
+
+            <!-- Sample Page Option with Placeholder Image -->
+            <div class="option-card">
+                <!-- <a href="sample_page.html"><button id="generate-sample">Generate a Sample Page</button></a> -->
+                 <a href="{% url 'sample_page' %}"><button id="generate-sample">Generate a Sample Page</button> </a>
+            </div>
+
+            <!-- Create Custom Page Option -->
+            <div class="option-card">
+                <h3>Create Your Own Page</h4>
+                <a href="{% url 'login_page' %}"><button id="create-custom">Login</button></a>
+                <a href="{% url 'signup_page' %}"><button id="create-custom">Signup</button></a>
+                 <!-- <li><a href="login">Create your own page</a></li> -->
+                 <!-- <a href="{% url 'login_page' %}"><button id="create-custom">Login</button></a>
+                 <a href="{% url 'signup_page' %}"><button id="create-custom">Signup</button></a> -->
+            </div>
+        </section>
+    </main>
+
+    
+</body>
+</html>

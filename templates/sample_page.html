@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="{% static 'styles/sample_page.css' %}">
+    <style>
+        e {
+            background: url("{% static 'Images/restaurant_image.webp' %}") no-repeat center center/cover;
+            color: white;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#reserve">Reserve a Table</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section" >
+        <h1>Welcome to Our Restaurant</h1>
+        <p>Experience the finest dining with us!</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>We offer the best culinary experiences with a passion for food.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <h2>Our Menu</h2>
+        <div class="menu-gallery">
+            <div class="menu-item">
+                <img src="{% static 'Images/dish1.webp' %}" alt="Food Item 1" >
+                <h3>Spaghetti Carbonara</h3>
+                <p>Spaghetti Carbonara is a classic Italian pasta dish made with creamy eggs, cheese, pancetta, and black pepper, creating a rich and savory flavor.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{% static 'Images/chickenTIkkaMasala.jpeg' %}" alt="Food Item 2">
+                <h3>Chicken Tikka Masala</h3>
+                <p>Chicken Tikka Masala features grilled marinated chicken simmered in a rich, spiced tomato and cream sauce.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{% static 'Images/SushiPlatter.jpeg' %}" alt="Food Item 3">
+                <h3>Sushi Platter</h3>
+                <p>A sushi platter is a beautifully arranged selection of fresh sushi, including rolls, nigiri, and sashimi, perfect for sharing and enjoying diverse flavors.</p>
+            </div>
+            <div class="menu-item">
+                <img src="{% static 'Images/PaneerTikkaMasala.jpeg' %}" alt="Food Item 3">
+                <h3>Paneer Tikka Masala</h3>
+                <p>Paneer Tikka Masala is a delicious dish of grilled paneer cubes simmered in a creamy, spiced tomato sauce, embodying rich Indian flavors.
+                </p>
+            </div>
+            <!-- Add more menu items as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: contact@restaurant.com</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="section">
+        <h2>Feedback</h2>
+        <form>
+            <textarea placeholder="Leave your feedback here..." rows="5" cols="30"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Reserve a Table Section -->
+    <section id="reserve" class="section">
+        <h2>Reserve a Table</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required><br>
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required><br>
+            <button type="submit">Reserve</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Our Restaurant. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

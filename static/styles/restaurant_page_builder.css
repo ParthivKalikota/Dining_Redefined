@@ -1,0 +1,201 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    height: 100%; /* Ensure full viewport height */
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Allow the body to grow and scroll */
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .user-info p {
+    font-size: 1.2rem;
+}
+
+header .logout-btn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+header .logout-btn:hover {
+    background-color: #e63946;
+}
+
+/* Split Screen Layout */
+.split-screen {
+    display: flex;
+    flex-direction: column; /* Stack sections on smaller screens */
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Left Panel Styles */
+.left-panel {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: url("{% static 'Images/Builder.webp' %}") no-repeat center center / cover;
+    border-radius: 10px;
+    overflow-y: auto; /* Allow scrolling within the panel */
+    width: 100%;
+}
+
+.left-panel .content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.left-panel h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.left-panel p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.restaurant-form .form-group {
+    margin-bottom: 15px;
+}
+
+.restaurant-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.restaurant-form input,
+.restaurant-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.restaurant-form textarea {
+    resize: none;
+}
+
+/* Template Selection Styles */
+.template-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.template-selection label {
+    flex: 1 1 200px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.template-selection label:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.template-selection img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.template-selection p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.template-selection input {
+    display: none;
+}
+
+.template-selection input:checked + img {
+    border: 2px solid #28a745;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.restaurant-form .submit-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.restaurant-form .submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .split-screen {
+        flex-direction: row; /* Row layout for larger screens */
+    }
+
+    .left-panel {
+        flex: 1;
+    }
+
+    .template-selection {
+        flex: 1;
+        justify-content: flex-start;
+    }
+}
+

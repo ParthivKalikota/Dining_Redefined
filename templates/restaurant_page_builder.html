@@ -1,0 +1,162 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Page Builder</title>
+    <link rel="stylesheet" href="{% static 'styles/restaurant_page_builder.css' %}">
+    <style>
+        .left-panel {
+            flex: 1;
+            background: url("{% static 'Images/Builder.webp' %}") no-repeat center center / cover;
+            padding: 40px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="user-info">
+            <p><span id="user-name">Hello, {{user.first_name}}</span>!</p>
+        </div>
+        <a href="{% url 'logout' %}"><button class="logout-btn" onclick="logout()">Logout</button></a>
+    </div>
+
+    <div class="split-screen">
+        
+        <div class="left-panel">
+            <h1>Create Your Restaurant Page</h1>
+            <p>Fill in the details to build a custom page for your restaurant.</p>
+            <form class="restaurant-form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="restaurant_name">Restaurant Name</label>
+                    <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Enter your restaurant name" required>
+                </div>
+                <div class="form-group">
+                    <label for="about">About</label>
+                    <textarea id="about" name="about" rows="4" placeholder="Write about your restaurant" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="Enter your restaurant location" required>
+                </div>
+                <button type="submit" class="submit-btn">Generate Page</button>
+            </form>
+        </div>
+
+        
+        <div class="right-panel">
+            <h2>Select a Template</h2>
+            <div class="template-options">
+                <label>
+                    <input type="radio" name="template" value="template1" required>
+                    <img src="https://via.placeholder.com/200x150?text=Template+1" alt="Template 1">
+                    <p>Modern Design</p>
+                </label>
+                <label>
+                    <input type="radio" name="template" value="template2">
+                    <img src="https://via.placeholder.com/200x150?text=Template+2" alt="Template 2">
+                    <p>Minimalist Style</p>
+                </label>
+                <label>
+                    <input type="radio" name="template" value="template3">
+                    <img src="https://via.placeholder.com/200x150?text=Template+3" alt="Template 3">
+                    <p>Classic Elegance</p>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Page Builder</title>
+    <link rel="stylesheet" href="{% static 'styles/restaurant_page_builder.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="user-info">
+            <p>Welcome, <strong>{{ user.first_name }}</strong>!</p>
+        </div>
+        <a href="{% url 'logout' %}"><button class="logout-btn">Logout</button></a>
+    </header>
+
+    <main class="split-screen">
+        <!-- Form Section -->
+        <section class="left-panel">
+            <div class="content">
+                <h1>Create Your Restaurant Page</h1>
+                <p>Fill out the form below to generate a customized page for your restaurant.</p>
+                <form method="POST" class="restaurant-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="restaurant_name">Restaurant Name</label>
+                        <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Enter your restaurant name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="about">About</label>
+                        <textarea id="about" name="about" rows="4" placeholder="Write about your restaurant" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="Enter your restaurant location" required>
+                    </div>
+
+                    <div class="form-group template-selection">
+                        <h2>Select a Template</h2>
+                        <label>
+                            <input type="radio" name="template" value="template1" required>
+                            <img src="https://via.placeholder.com/200x150?text=Template+1" alt="Template 1">
+                            <p>Modern Design</p>
+                        </label>
+                        <label>
+                            <input type="radio" name="template" value="template2">
+                            <img src="https://via.placeholder.com/200x150?text=Template+2" alt="Template 2">
+                            <p>Minimalist Style</p>
+                        </label>
+                        <label>
+                            <input type="radio" name="template" value="template3">
+                            <img src="https://via.placeholder.com/200x150?text=Template+3" alt="Template 3">
+                            <p>Classic Elegance</p>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Generate Page</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
